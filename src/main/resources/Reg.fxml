@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="client.controller.RegController">
+
+    <HBox alignment="CENTER">
+        <Label text="Регистрация "></Label>
+    </HBox>
+
+    <Label text="Login: "></Label>
+    <TextField fx:id="textFieldLogin" promptText="Логин..."></TextField>
+
+    <Label text="Password: "></Label>
+    <PasswordField fx:id="textFieldPass" promptText="Пароль..."></PasswordField>
+
+    <HBox alignment="BASELINE_RIGHT">
+        <Button fx:id="buttonSend" onAction="#actionButtonSend" text="Отправить"></Button>
+    </HBox>
+    <HBox alignment="CENTER">
+        <Label fx:id="labelRegOk"></Label>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,45 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<VBox fx:controller="client.controller.ControllerStorage"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+
+    <MenuBar>
+        <Menu text="Файл">
+            <MenuItem fx:id="menuItemSendFile" onAction="#menuItemActionSendFile" text="Отправить Файл"/>
+            <MenuItem fx:id="menuItemExit" text="Выйти из программы" onAction="#btnActionExit"/>
+        </Menu>
+    </MenuBar>
+
+    <HBox>
+        <Button text="Storage" fx:id="comboButtonUser" onAction="#actionButtonUser"/>
+        <TextField fx:id="textFieldPaths" editable="false" HBox.hgrow="ALWAYS"/>
+        <Button text="Обновить" onAction="#actionButtonUpdatePath"/>
+    </HBox>
+    <TableView fx:id="tableViewFile" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn prefWidth="24" fx:id="fileTypeColumn" />
+            <TableColumn prefWidth="350" text="Имя" fx:id="filePathColumn" />
+            <TableColumn prefWidth="120" text="Размер" fx:id="fileSizeColumn" />
+            <TableColumn prefWidth="120" text="Дата создания" fx:id="fileDataColumn" />
+        </columns>
+    </TableView>
+
+    <HBox spacing="5" >
+        <!--focusTraversable="false" при нажатии кнокпи фокус не скидывается с выбранного элемента        -->
+        <Button maxWidth="Infinity" focusTraversable="false" text="Скачать" HBox.hgrow="ALWAYS" onAction="#actionButtonDownloads"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Удалить" HBox.hgrow="ALWAYS" onAction="#btnActionDelete"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Выход из программы" HBox.hgrow="ALWAYS" onAction="#btnActionExit"/>
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </HBox>
+
+</VBox>
